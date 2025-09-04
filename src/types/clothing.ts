@@ -74,21 +74,21 @@ export interface SortOption {
   label: string;
 }
 
-// Enums para valores predefinidos
-export enum ClothingType {
-  TOPS = "tops",
-  BOTTOMS = "bottoms",
-  DRESSES = "dresses",
-  OUTERWEAR = "outerwear",
-  SHOES = "shoes",
-  ACCESSORIES = "accessories",
-}
+// Constantes para valores predefinidos
+export const ClothingType = {
+  TOPS: "tops",
+  BOTTOMS: "bottoms",
+  DRESSES: "dresses",
+  OUTERWEAR: "outerwear",
+  SHOES: "shoes",
+  ACCESSORIES: "accessories",
+} as const;
 
-export enum SortBy {
-  NEWEST = "newest",
-  OLDEST = "oldest",
-  PRICE_LOW_TO_HIGH = "price_low_to_high",
-  PRICE_HIGH_TO_LOW = "price_high_to_low",
-  MOST_POPULAR = "most_popular",
-  BEST_RATING = "best_rating",
-}
+export const SortBy = {
+  NEWEST: "newest",
+  OLDEST: "oldest",
+  PRICE_LOW_TO_HIGH: "price_low_to_high",
+  PRICE_HIGH_TO_LOW: "price_high_to_low",
+  MOST_POPULAR: "most_popular",
+  BEST_RATING: "best_rating",
+} as const;
