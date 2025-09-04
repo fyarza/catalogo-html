@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos para impresión */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  header,
+  footer {
+    display: none;
+  }
+
+  /* Ocultar el título del catálogo en la impresión */
+  main#product-catalog .mb-12.text-center {
+    display: none;
+  }
+
+  main#product-catalog {
+    padding: 1rem;
+  }
+
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+    page-break-inside: avoid;
+  }
+
+  .group {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .transform {
+    transform: none !important;
+  }
+
+  /* Asegurar que las imágenes se impriman correctamente */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Estilos para los textos de productos */
+  h3,
+  p {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
