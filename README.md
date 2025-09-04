@@ -128,6 +128,115 @@ La aplicación está completamente optimizada para:
 - `npm run preview` - Vista previa de la build
 - `npm run lint` - Linting del código
 
+## 🌐 Deploy en Netlify
+
+### Configuración Automática
+
+El proyecto está configurado para desplegarse automáticamente en Netlify:
+
+#### 1. **Configuración de Build**:
+```
+Build command: npm run build
+Publish directory: dist
+Node version: 18+
+```
+
+#### 2. **Deploy Automático**:
+- ✅ **Conectado a GitHub**: Los cambios en `main` activan deploy automático
+- ✅ **Build optimizado**: Vite genera una build optimizada para producción
+- ✅ **Tiempo de deploy**: 1-3 minutos típicamente
+
+#### 3. **URL de Producción**:
+🔗 **https://catalogodemoweb.netlify.app/**
+
+### Proceso de Deploy
+
+1. **Desarrollo Local**:
+   ```bash
+   npm run dev      # Desarrollo
+   npm run build    # Test local de build
+   npm run preview  # Preview de la build
+   ```
+
+2. **Deploy a Producción**:
+   ```bash
+   git add .
+   git commit -m "Nueva funcionalidad"
+   git push origin main
+   ```
+
+3. **Netlify automáticamente**:
+   - Detecta el push a `main`
+   - Ejecuta `npm install`
+   - Ejecuta `npm run build`
+   - Despliega el contenido de `dist/`
+
+### Funcionalidades en Producción
+
+- ✅ **Catálogo completo** con 12 productos
+- ✅ **Búsqueda en tiempo real** funcional
+- ✅ **Diseño responsive** optimizado para móviles
+- ✅ **Generación de PDF** del catálogo
+- ✅ **Fuentes Google** (Poppins, Material Icons)
+- ✅ **Performance optimizada** con Vite
+
+### Monitoreo del Deploy
+
+Para verificar el estado del deploy:
+
+1. **Dashboard de Netlify** → Tu sitio → **"Deploys"**
+2. **Estados posibles**:
+   - 🟡 **Building**: Construyendo la aplicación
+   - 🟢 **Published**: Deploy exitoso
+   - 🔴 **Failed**: Error en el build
+
+3. **Logs detallados**: Disponibles en cada deploy individual
+
+### Troubleshooting
+
+Si el deploy falla:
+
+1. **Verifica localmente**:
+   ```bash
+   npm run build  # Debe completarse sin errores
+   ```
+
+2. **Revisa los logs** en Netlify para errores específicos
+
+3. **Errores comunes**:
+   - Dependencias faltantes
+   - Errores de TypeScript
+   - Problemas de importación
+
+### Configuración Avanzada (Opcional)
+
+Puedes crear un `netlify.toml` para configuración avanzada:
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
 ## 📄 Licencia
 
 Este proyecto es de código abierto y está disponible bajo la licencia MIT.
