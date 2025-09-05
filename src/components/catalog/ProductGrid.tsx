@@ -1,4 +1,5 @@
 import { ProductCard } from "./ProductCard";
+import { BlurFade } from "@/components/ui/blur-fade";
 import type { Product } from "@/types/clothing";
 
 interface ProductGridProps {
@@ -13,27 +14,55 @@ export function ProductGrid({ products, searchTerm }: ProductGridProps) {
   return (
     <main id="product-catalog">
       <div className="mb-12 text-center">
-        <h2 className="text-4xl font-bold tracking-tight text-gray-800">
-          {isSearching ? `Resultados para "${searchTerm}"` : "Nuestro Catálogo"}
-        </h2>
-        <p className="mt-2 text-lg text-gray-600">
-          {isSearching
-            ? `${products.length} producto${
-                products.length !== 1 ? "s" : ""
-              } encontrado${products.length !== 1 ? "s" : ""}`
-            : "Descubre nuestra colección exclusiva"}
-        </p>
+        <BlurFade
+          delay={0.2}
+          duration={0.8}
+          offset={30}
+          direction="up"
+          inView={true}
+        >
+          <h2 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
+            {isSearching
+              ? `Resultados para "${searchTerm}"`
+              : "Nuestro Catálogo"}
+          </h2>
+        </BlurFade>
+        <BlurFade
+          delay={0.4}
+          duration={0.8}
+          offset={20}
+          direction="up"
+          inView={true}
+        >
+          <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
+            {isSearching
+              ? `${products.length} producto${
+                  products.length !== 1 ? "s" : ""
+                } encontrado${products.length !== 1 ? "s" : ""}`
+              : "Descubre nuestra colección exclusiva"}
+          </p>
+        </BlurFade>
       </div>
 
       {hasResults ? (
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product, index) => (
+            <BlurFade
+              key={product.id}
+              delay={index * 0.1}
+              duration={0.6}
+              offset={20}
+              direction="up"
+              inView={true}
+              blur="4px"
+            >
+              <ProductCard product={product} />
+            </BlurFade>
           ))}
         </div>
       ) : isSearching ? (
         <div className="text-center py-16">
-          <div className="mx-auto w-24 h-24 mb-6 text-gray-300">
+          <div className="mx-auto w-24 h-24 mb-6 text-gray-300 dark:text-gray-600 animate-pulse">
             <svg
               fill="none"
               viewBox="0 0 24 24"
@@ -48,13 +77,13 @@ export function ProductGrid({ products, searchTerm }: ProductGridProps) {
               />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">
+          <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2 transition-colors duration-300">
             No se encontraron productos
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
             No hay productos que coincidan con "{searchTerm}"
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-300">
             Intenta con otros términos de búsqueda
           </p>
         </div>
