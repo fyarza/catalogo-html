@@ -3,6 +3,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import { FavoritesModal } from "@/components/ui/favorites-modal";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface CatalogHeaderProps {
   searchTerm: string;
@@ -76,6 +77,13 @@ export function CatalogHeader({
           >
             Novedades
           </a>
+          <Link
+            to="/admin"
+            className="text-base font-medium text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 flex items-center gap-1"
+          >
+            <span className="material-icons text-sm">admin_panel_settings</span>
+            Admin
+          </Link>
           <div className="relative group">
             <input
               className="px-4 py-2 w-full rounded-full border border-gray-300 transition-all duration-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 group-hover:shadow-lg group-hover:scale-105"
@@ -120,6 +128,13 @@ export function CatalogHeader({
           >
             Novedades
           </a>
+          <Link
+            to="/admin"
+            className="text-base font-medium text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 flex items-center gap-1"
+          >
+            <span className="material-icons text-sm">admin_panel_settings</span>
+            Admin
+          </Link>
           <div className="relative group">
             <input
               className="px-4 py-2 w-64 rounded-full border border-gray-300 transition-all duration-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 group-hover:shadow-lg group-hover:scale-105"

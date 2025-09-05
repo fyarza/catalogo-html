@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos para móviles */
+@layer utilities {
+  .h-safe-area-bottom {
+    height: env(safe-area-inset-bottom);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Mejoras para el panel de administración móvil */
+@layer components {
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mobile-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Rainbow Button Variables and Animation */
 :root {
   --color-1: #ff6b6b;

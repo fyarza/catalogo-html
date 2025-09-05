@@ -1,7 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CatalogHeader } from "@/components/layout/CatalogHeader";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { CatalogFooter } from "@/components/layout/CatalogFooter";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { AdminPage } from "@/pages/AdminPage";
 import { products } from "@/data/products";
 import { useSearch } from "@/hooks/useSearch";
 
@@ -27,7 +29,12 @@ function CatalogApp() {
 function App() {
   return (
     <ThemeProvider defaultTheme="light">
-      <CatalogApp />
+      <Router>
+        <Routes>
+          <Route path="/" element={<CatalogApp />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }

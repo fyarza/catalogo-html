@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #3d84f5;
+        --primary-color-light: #e8f1fe;
+        --text-primary: #111418;
+        --text-secondary: #60708a;
+        --bg-secondary: #f0f2f5;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white">
+    <div
+      class="flex overflow-x-hidden relative flex-col justify-between min-h-screen size-full group/design-root"
+    >
+      <header class="sticky top-0 z-10 backdrop-blur-sm bg-white/80">
+        <div class="flex justify-between items-center p-4 pb-3">
+          <div class="w-10"></div>
+          <h1 class="flex-1 text-xl font-bold text-center">Products</h1>
+          <button
+            class="flex justify-center items-center text-gray-700 rounded-full size-10 hover:bg-gray-100"
+          >
+            <span class="text-2xl material-symbols-outlined">add</span>
+          </button>
+        </div>
+        <div class="px-4 pb-3">
+          <div class="relative">
+            <div
+              class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+            >
+              <span class="text-gray-500 material-symbols-outlined"
+                >search</span
+              >
+            </div>
+            <input
+              class="w-full rounded-lg border-0 bg-gray-100 py-3 pl-10 pr-4 text-gray-900 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)]"
+              placeholder="Search products"
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex overflow-x-auto gap-2 px-4 pb-3">
+          <button
+            class="flex gap-x-2 justify-center items-center px-4 h-9 text-sm font-medium text-gray-800 bg-gray-100 rounded-full shrink-0"
+          >
+            <span>Status</span>
+            <span class="text-xl material-symbols-outlined">expand_more</span>
+          </button>
+          <button
+            class="flex gap-x-2 justify-center items-center px-4 h-9 text-sm font-medium text-gray-800 bg-gray-100 rounded-full shrink-0"
+          >
+            <span>Price</span>
+            <span class="text-xl material-symbols-outlined">expand_more</span>
+          </button>
+          <button
+            class="flex gap-x-2 justify-center items-center px-4 h-9 text-sm font-medium text-gray-800 bg-gray-100 rounded-full shrink-0"
+          >
+            <span>Category</span>
+            <span class="text-xl material-symbols-outlined">expand_more</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex-grow">
+        <ul class="divide-y divide-gray-100">
+          <li class="flex gap-4 items-center p-4">
+            <input
+              class="h-5 w-5 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+              type="checkbox"
+            />
+            <div
+              class="bg-center bg-no-repeat bg-cover rounded-lg aspect-square size-14"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCg-5hZWfZCSAsv9oyuHgu5jsM9WpkViUJ-wtbSvsqVqN3hkmulXGzQqo8BPfjr9oUwm3sMu0A-CoxTSw0CQwymFaAvWiE2zGwN7riDAVxIfEw92VSsAYXQJm8xq1Ae15X49acZRa4ZlhL6r-j4Y81zrJ0fYsOOVfNyCCLoqrWDc6S7iu0xtyk9OIk0c5XyKKdgqI3FEDoO6Amv2RUeXt1DbxiqB5FWaIcA3VFKhejN9BD9mi4BK9cbXf4EMmQNZj82S2l3rMPFDc43');
+              "
+            ></div>
+            <div class="flex-grow">
+              <p class="font-semibold text-gray-900">Vintage Leather Jacket</p>
+              <div class="flex gap-2 items-center">
+                <p class="text-sm text-gray-500">$20.00</p>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-full ring-1 ring-inset ring-green-600/20"
+                  >Active</span
+                >
+              </div>
+            </div>
+            <button
+              class="flex justify-center items-center text-gray-500 rounded-full size-10 hover:bg-gray-100"
+            >
+              <span class="material-symbols-outlined">more_vert</span>
+            </button>
+          </li>
+          <li class="flex gap-4 items-center p-4">
+            <input
+              class="h-5 w-5 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+              type="checkbox"
+            />
+            <div
+              class="bg-center bg-no-repeat bg-cover rounded-lg aspect-square size-14"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCy9XWurnhlXwP4OEk0StSUmzg1lqPzhONy4mQB4WSCniZvx4P-PA-com5d8b8ymLL6n7I4X7cP8LdKZ6_N24wygMxhKcJG2Ra0DkLt3gdQCnk7x_pbcPuWzzV45zL0b3iEPW0bH2-7i8SwrdOBL0dqKfahIHUpKkCgHTay2_bHl3Axu8UzBEuGh3sVNcysBfPegR9h4EfTXdhkTj8LYUf5iKlAXgLaYcNBDq8fAEEbXm5TsUsFkMPH28vfAT-iBUMLzfceb8PlAPwk');
+              "
+            ></div>
+            <div class="flex-grow">
+              <p class="font-semibold text-gray-900">Classic Denim Jeans</p>
+              <div class="flex gap-2 items-center">
+                <p class="text-sm text-gray-500">$15.00</p>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-full ring-1 ring-inset ring-green-600/20"
+                  >Active</span
+                >
+              </div>
+            </div>
+            <button
+              class="flex justify-center items-center text-gray-500 rounded-full size-10 hover:bg-gray-100"
+            >
+              <span class="material-symbols-outlined">more_vert</span>
+            </button>
+          </li>
+          <li class="flex gap-4 items-center p-4">
+            <input
+              class="h-5 w-5 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+              type="checkbox"
+            />
+            <div
+              class="bg-center bg-no-repeat bg-cover rounded-lg aspect-square size-14"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUSJWD3yOJP3UV0bY8uOME7gfxYqAL-LU7k_1QOr8tiNCDpp8hPBSvN_suE-Khyf6gtGCMkGNFCAkb2aBpHUo7FI5cLZOyGZ-cX0WPlr29--mOOeLCp0Zf_SR5ATTtxg8sW1cB8gLM1AdUqvt6WrOMedlpnXINLZayQ11xc5ivLZRDsteagP2I1CN971HysjlS0HBx5ZxbP2-6IvrBCsPvIDX23qT9mpcIJvBfcqBbHDVvTbomcEMzVB_vAVC9q6BPXId711G80s5v');
+              "
+            ></div>
+            <div class="flex-grow">
+              <p class="font-semibold text-gray-900">Cozy Knit Sweater</p>
+              <div class="flex gap-2 items-center">
+                <p class="text-sm text-gray-500">$25.00</p>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium text-red-700 bg-red-50 rounded-full ring-1 ring-inset ring-red-600/10"
+                  >Inactive</span
+                >
+              </div>
+            </div>
+            <button
+              class="flex justify-center items-center text-gray-500 rounded-full size-10 hover:bg-gray-100"
+            >
+              <span class="material-symbols-outlined">more_vert</span>
+            </button>
+          </li>
+          <li class="flex gap-4 items-center p-4">
+            <input
+              class="h-5 w-5 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+              type="checkbox"
+            />
+            <div
+              class="bg-center bg-no-repeat bg-cover rounded-lg aspect-square size-14"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtXbJE3qBeEUQVIFrLbt2R-PHd87aPL1_Sn3P79c1otlHnkwl2Mt0P9uv7J5XMa9J_QpxANwu4aYr0lWhaqg2Kav0V-Tv6hwcvaLJgI1X-UCf1EXwloYHth-lrodSPd1J44QxJfe1CcGAZk-OLLNXnsMriCbRO64Uu5g6vy8459D9gCd1QTlHX3mOgnNP2nHPrAwbTREQAnnZhSlzYsP4hCeFhCUHd9tDdVT7b-eJnAJFg9TEOFjVWYnaOdNdwpHwZZwMtC5xjbOHr');
+              "
+            ></div>
+            <div class="flex-grow">
+              <p class="font-semibold text-gray-900">Stylish Ankle Boots</p>
+              <div class="flex gap-2 items-center">
+                <p class="text-sm text-gray-500">$30.00</p>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium text-green-700 bg-green-50 rounded-full ring-1 ring-inset ring-green-600/20"
+                  >Active</span
+                >
+              </div>
+            </div>
+            <button
+              class="flex justify-center items-center text-gray-500 rounded-full size-10 hover:bg-gray-100"
+            >
+              <span class="material-symbols-outlined">more_vert</span>
+            </button>
+          </li>
+          <li class="flex gap-4 items-center p-4">
+            <input
+              class="h-5 w-5 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+              type="checkbox"
+            />
+            <div
+              class="bg-center bg-no-repeat bg-cover rounded-lg aspect-square size-14"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrtNNCrKaB7SgS3va2Ff27QG3Kzh5JXcZ7RlCrv-OFifgE4U1H56zY-TY35kMgmd3-NRw_FA7Q4SiX9triM-gYbF4cLQBqr6ncQxcgkf5OZgxYmoNgZXEVdgFhTy5whnTP7--gtdCE0GMNKzbsd0z-VyigiUw_NrEWcdUSMCybkY9tQ8J73EPhpEgqNWsP1QDn3QUFfEVzfXyh2eSRxBQjqwCbrc-p6UDLy9kuq3vCk2UyoWU5gejFdjT5YH9eK_95GsXBq3yaf3rc');
+              "
+            ></div>
+            <div class="flex-grow">
+              <p class="font-semibold text-gray-900">Casual Cotton T-Shirt</p>
+              <div class="flex gap-2 items-center">
+                <p class="text-sm text-gray-500">$18.00</p>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-50 rounded-full ring-1 ring-inset ring-yellow-600/20"
+                  >Archived</span
+                >
+              </div>
+            </div>
+            <button
+              class="flex justify-center items-center text-gray-500 rounded-full size-10 hover:bg-gray-100"
+            >
+              <span class="material-symbols-outlined">more_vert</span>
+            </button>
+          </li>
+        </ul>
+      </main>
+      <footer
+        class="sticky bottom-0 border-t border-gray-100 backdrop-blur-sm bg-white/80"
+      >
+        <nav class="flex justify-around py-2">
+          <a
+            class="flex flex-col items-center justify-end gap-1 w-full text-gray-500 hover:text-[var(--primary-color)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 w-full text-[var(--primary-color)] font-semibold"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: 'FILL' 1"
+              >inventory_2</span
+            >
+            <span class="text-xs">Products</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 w-full text-gray-500 hover:text-[var(--primary-color)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">add_circle</span>
+            <span class="text-xs font-medium">Add</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 w-full text-gray-500 hover:text-[var(--primary-color)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <span class="text-xs font-medium">Settings</span>
+          </a>
+        </nav>
+        <div class="bg-white h-safe-area-bottom"></div>
+      </footer>
+    </div>
+  </body>
+</html>
