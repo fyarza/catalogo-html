@@ -135,6 +135,7 @@ La aplicación está completamente optimizada para:
 El proyecto está configurado para desplegarse automáticamente en Netlify:
 
 #### 1. **Configuración de Build**:
+
 ```
 Build command: npm run build
 Publish directory: dist
@@ -142,16 +143,19 @@ Node version: 18+
 ```
 
 #### 2. **Deploy Automático**:
+
 - ✅ **Conectado a GitHub**: Los cambios en `main` activan deploy automático
 - ✅ **Build optimizado**: Vite genera una build optimizada para producción
 - ✅ **Tiempo de deploy**: 1-3 minutos típicamente
 
 #### 3. **URL de Producción**:
+
 🔗 **https://catalogodemoweb.netlify.app/**
 
 ### Proceso de Deploy
 
 1. **Desarrollo Local**:
+
    ```bash
    npm run dev      # Desarrollo
    npm run build    # Test local de build
@@ -159,6 +163,7 @@ Node version: 18+
    ```
 
 2. **Deploy a Producción**:
+
    ```bash
    git add .
    git commit -m "Nueva funcionalidad"
@@ -186,6 +191,7 @@ Para verificar el estado del deploy:
 
 1. **Dashboard de Netlify** → Tu sitio → **"Deploys"**
 2. **Estados posibles**:
+
    - 🟡 **Building**: Construyendo la aplicación
    - 🟢 **Published**: Deploy exitoso
    - 🔴 **Failed**: Error en el build
@@ -197,6 +203,7 @@ Para verificar el estado del deploy:
 Si el deploy falla:
 
 1. **Verifica localmente**:
+
    ```bash
    npm run build  # Debe completarse sin errores
    ```
